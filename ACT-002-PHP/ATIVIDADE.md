@@ -15,13 +15,59 @@ Em sua resposta, considere:
 <br>
 
 ## Resposta:
-<!-- ESCREVER RESPOSTA AQUI
+
+Cookies e Sessions são utilizados para armazenar dados entre requisições em aplicações web, porém funcionam de maneiras diferentes.
+
+
+### Onde os dados são armazenados
+
+### Cookies
+- São armazenados **no navegador do usuário (cliente)**  
+- Ficam salvos no dispositivo do usuário  
+
+### Sessions
+- São armazenadas **no servidor**  
+- O navegador guarda apenas um identificador da sessão (geralmente um cookie chamado `PHPSESSID`)  
+
+
+## 🔒 Segurança
+
+### Cookies
+- Menos seguros  
+- Podem ser acessados e modificados pelo usuário  
+- Estão mais vulneráveis a ataques como manipulação de dados  
+
+### Sessions
+- Mais seguras  
+- Os dados ficam no servidor, sem acesso direto do usuário  
+- Mesmo assim, dependem de boas práticas (ex: uso de HTTPS, proteção contra roubo de sessão)  
 
 
 
-tambem apagar comentário por favor
--->
----
+## ⚙️ Quando usar cada um
+
+### Cookies
+São mais adequados para:
+- Armazenar preferências do usuário (tema, idioma)
+- Dados não sensíveis  
+- Informações que precisam persistir mesmo após fechar o navegador  
+
+### Sessions
+São mais adequadas para:
+- Controle de login/autenticação  
+- Dados sensíveis  
+- Informações temporárias durante a navegação  
+
+
+
+## ✅ Conclusão
+
+A principal diferença está no local de armazenamento e na segurança.  
+
+- **Cookies** → simples e persistentes, porém menos seguros  
+- **Sessions** → mais seguras e controladas, ideais para dados importantes  
+
+Na prática, aplicações modernas utilizam **sessions junto com cookies**, combinando praticidade e segurança.
 
 ## Exercício 2 — Pergunta de aplicação
 
