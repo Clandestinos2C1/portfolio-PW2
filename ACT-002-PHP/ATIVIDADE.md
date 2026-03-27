@@ -38,4 +38,19 @@ Justifique suas escolhas.
 
 ## Resposta:
 
-<!-- work in progress -->
+### ❌ Cookies
+Seria possível manter o usuário logado apenas com cookies, por exemplo:
+
+- Usando um cookie com o `user_id`;
+- ou utilizando um **token** de autenticação.
+<br>
+
+### Problemas:
+
+- Cookies podem ser facilmente manipulados (são de certa forma previsíveis);
+- Permite a falsificação de identidade (spoofing);
+- Não existe validação no servidor.
+<br> 
+<br>
+
+### ✔️ Session + Cookies
