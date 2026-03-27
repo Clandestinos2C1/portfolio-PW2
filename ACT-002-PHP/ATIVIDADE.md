@@ -50,7 +50,43 @@ Seria possível manter o usuário logado apenas com cookies, por exemplo:
 - Cookies podem ser facilmente manipulados (são de certa forma previsíveis);
 - Permite a falsificação de identidade (spoofing);
 - Não existe validação no servidor.
-<br> 
+<br>
+Conclusão: Não utilizar em hipótese alguma, muito vulnerável.
+<br>
 <br>
 
-### ✔️ Session + Cookies
+### ✔️ Session + Cookies (padrão comum)
+
+- O servidor cria uma session:
+  
+$_SESSION['user_id'] = 123;
+
+<br>
+
+- O navegador recebe um cookie com o ID da sessão:
+  
+cookie: PHPSESSID=abc123
+
+<br>
+
+- O servidor usa esse ID para recuperar os dados da session.
+
+<br>
+
+### ⚠️ Importante
+
+Usar session com certeza é mais seguro que usar apenas cookies, porém não é automaticamente seguro.
+
+Se uma pessoa má intencionada conseguir roubar o cookie (ex: via XXS ou rede insegura), ele pode facilmente se passar pelo usuário (**session hijacking**).
+
+### Ou seja:
+
+- **O sistema não impede o uso indevido do cookie**
+- Ele apenas dificulta a falsificação, pois o ID da sessão é "aleatório"
+- A segurança depende de medidas adicionais:
+  
+  - HTTPS
+  - HttpOnly
+  - Expiração de sessão
+  - Regeneração de ID
+
