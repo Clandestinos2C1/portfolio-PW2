@@ -69,6 +69,8 @@ A principal diferença está no local de armazenamento e na segurança.
 
 Na prática, aplicações modernas utilizam **sessions junto com cookies**, combinando praticidade e segurança.
 
+---
+
 ## Exercício 2 — Pergunta de aplicação
 
 Imagine que você está desenvolvendo um sistema de **loja virtual**.
@@ -153,8 +155,8 @@ Nesse caso, o próprio navegador tem que enviar esses dados a cada requisição
 - O usuário pode facilmente alterar o conteúdo
   - Alterar quantidade (imagine o usuário colocando 9999 unidades no carrinho, ia comprometer o sistema ao enviar o cookie)  
 
-- Os dados ficam mais expostos
-- Existe limite de tamanho (~4KB)
+- Os dados ficam mais expostos;
+- Existe limite de tamanho (~4KB).
 <br>
 
 ### ✔️ Session
@@ -172,3 +174,43 @@ O navegador nesse caso mantém apenas o ID da sessão (que vai puxar o conteúdo
 ### Conclusão:
 
 Assim como no caso anterior, nesse caso ainda é mais seguro usar session, mas não elimina riscos.
+
+## C) Registrar preferências do usuário
+
+### ✔️ Cookies
+
+Nesse caso os cookies são ideais.
+
+Preferências geralmente incluem: 
+
+- Tema (claro/escuro);
+- Idioma;
+- Moeda.
+
+Ex: `cookie: tema=dark`
+
+### ✅ Vantagens:
+
+- Persistem mesmo sem login;
+- Não exigem armazenamento no servidor;
+- São leves e simples de implementar;
+
+Como nesse caso não existem dados sensíveis, não tem problema usar cookies.
+
+<br>
+
+### ❌ Session (utilizável, mas não é o método mais adequado)
+
+É totalmente possível usar session:
+
+`$_SESSION['tema'] = 'dark';`
+
+Mas não é ideal, pois
+
+- Essas preferências vão se perder ao fazer logout;
+- Depende do usuário estar logado;
+- Gera uso desnecessário do servidor.
+
+Nesse caso, não é errado usar session, mas é desnecessário.
+
+---
