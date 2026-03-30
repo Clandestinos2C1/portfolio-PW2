@@ -246,9 +246,23 @@ Descreva:
 
 ## Resposta:
 
-<!-- 
-colocar resposta aqui no lugar desse comentário, usando a caixinha de código igual do jeito que tá acima ( ```)
--->
+<br>
+
+## A) O que acontecu em cada passo
+
+- Ao abrir o site da primeira vez você recebe a mensagem que os cookies não estão disponiveis
+- Quando vc atualiza a pagina uma vez mostra q o valor do cookie é 1
+- Ao limpar os cookies e abrir novamente a pagina volta a mostrar que os cookies nao estão disponiveis
+
+<br>
+
+## B) Por que o cookie não aparece imediatamente na primeira execução.
+
+- O cookie não aparece na primeira execução porque existe um ciclo de requisição e resposta no HTTP
+- Quando você acessa a página, o navegador envia uma requisição sem o cookie (ele ainda não existe)
+- O [setcookie()] no PHP não cria o cookie imediatamente; ele apenas envia uma instrução para o navegador salvar o cookie.
+- O navegador só armazena esse cookie depois que recebe a resposta.
+
 
 ---
 
