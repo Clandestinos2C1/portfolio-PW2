@@ -55,7 +55,7 @@ font-family: 'Inter', sans-serif;
 
 # 🖼️ Logo
 
-*(Espaço reservado para a imagem da logo)*
+![Logo](website/images/logo.png)
 
 ---
 
