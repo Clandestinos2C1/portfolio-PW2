@@ -1,4 +1,29 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php';
+      include 'config/conexao.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $nome = $_POST['nome'];
+    $fabricante = $_POST['fabricante'];
+    $preco = $_POST['preco'];
+    $estoque = $_POST['estoque'];
+
+    $sql = "INSERT INTO produtos
+    (nome, fabricante, preco, estoque)
+    VALUES
+    (:nome, :fabricante, :preco, :estoque)";
+
+    $stmt = $pdo->prepare($sql);
+
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':fabricante', $fabricante);
+    $stmt->bindParam(':preco', $preco);
+    $stmt->bindParam(':estoque', $estoque);
+
+    $stmt->execute();
+}
+    
+?>
 
 <div class="card">
 
@@ -7,46 +32,42 @@
     <form action="" method="POST">
 
         <div class="form-group">
-            <label for="nome">Nome</label>
+            <label>Nome</label>
 
             <input
                 type="text"
                 name="nome"
-                id="nome"
                 required
             >
         </div>
 
         <div class="form-group">
-            <label for="fabricante">Fabricante</label>
+            <label>Fabricante</label>
 
             <input
                 type="text"
                 name="fabricante"
-                id="fabricante"
                 required
             >
         </div>
 
         <div class="form-group">
-            <label for="preco">Preço</label>
+            <label>Preço</label>
 
             <input
                 type="number"
                 step="0.01"
                 name="preco"
-                id="preco"
                 required
             >
         </div>
 
         <div class="form-group">
-            <label for="estoque">Estoque</label>
+            <label>Estoque</label>
 
             <input
                 type="number"
                 name="estoque"
-                id="estoque"
                 required
             >
         </div>
