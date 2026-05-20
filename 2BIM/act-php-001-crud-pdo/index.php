@@ -1,22 +1,130 @@
 <?php
-require_once 'config/conexao.php';
 
-$select = "SELECT * from produtos order by id desc";
+include 'includes/conexao.php';
+include 'includes/header.php';
 
-$Ans = $pdo->query($select);
+$sql = "SELECT * FROM produtos";
 
-$produtos = $Ans->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
 
-require_once 'includes/header.php';
+$produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<main>
+<div class="card">
 
+    <h2>Produtos Cadastrados</h2>
 
-<div class="pagetop"> <!-- parte do topo essa ai, se qser renomear qualquer classe fica a vontade, voce que vai fazer o css ne -->
+    <br>
 
-    <a href="cadastro.php" class="cadastrar_botao">
-            Cadastrar Produto
+    <a href="cadastro.php" class="btn btn-green">
+        Novo Produto
     </a>
+
+    <!--CARDS MOBILE-->
+
+    <div class="cards-mobile">
+
+        <?php foreach($produtos as $produto): ?>
+
+        <div class="produto-card">
+
+            <h3><?= $produto['nome'] ?></h3>
+
+            <p>
+                <strong>Fabricante:</strong>
+                <?= $produto['fabricante'] ?>
+            </p>
+
+            <p>
+                <strong>Preço:</strong>
+                R$ <?= number_format($produto['preco'],2,',','.') ?>
+            </p>
+
+            <p>
+                <strong>Estoque:</strong>
+                <?= $produto['estoque'] ?>
+            </p>
+
+            <div class="card-buttons">
+
+                <a
+                    href="editar.php?id=<?= $produto['id'] ?>"
+                    class="btn btn-blue"
+                >
+                    Editar
+                </a>
+
+                <a
+                    href="excluir.php?id=<?= $produto['id'] ?>"
+                    class="btn btn-red"
+                >
+                    Excluir
+                </a>
+
+            </div>
+
+        </div>
+
+        <?php endforeach; ?>
+
+    </div>
+
+    <!-- TABELA DESKTOP-->
+
+    <table class="tabela-desktop">
+
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Fabricante</th>
+            <th>Preço</th>
+            <th>Estoque</th>
+            <th>Ações</th>
+        </tr>
+
+        <?php foreach($produtos as $produto): ?>
+
+        <tr>
+
+            <td><?= $produto['id'] ?></td>
+
+            <td><?= $produto['nome'] ?></td>
+
+            <td><?= $produto['fabricante'] ?></td>
+
+            <td>
+                R$
+                <?= number_format($produto['preco'],2,',','.') ?>
+            </td>
+
+            <td><?= $produto['estoque'] ?></td>
+
+            <td>
+
+                <a
+                    href="editar.php?id=<?= $produto['id'] ?>"
+                    class="btn btn-blue"
+                >
+                    Editar
+                </a>
+
+                <a
+                    href="excluir.php?id=<?= $produto['id'] ?>"
+                    class="btn btn-red"
+                >
+                    Excluir
+                </a>
+
+            </td>
+
+        </tr>
+
+        <?php endforeach; ?>
+
+    </table>
+
 </div>
+
+<?php include 'includes/footer.php'; ?>
