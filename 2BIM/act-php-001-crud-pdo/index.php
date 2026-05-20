@@ -1,6 +1,6 @@
 <?php
 
-include 'includes/conexao.php';
+include 'config/conexao.php';
 include 'includes/header.php';
 
 $sql = "SELECT * FROM produtos";
