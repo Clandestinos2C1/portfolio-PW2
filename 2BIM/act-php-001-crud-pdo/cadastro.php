@@ -7,42 +7,46 @@
     <form action="" method="POST">
 
         <div class="form-group">
-            <label>Nome</label>
+            <label for="nome">Nome</label>
 
             <input
                 type="text"
                 name="nome"
+                id="nome"
                 required
             >
         </div>
 
         <div class="form-group">
-            <label>Fabricante</label>
+            <label for="fabricante">Fabricante</label>
 
             <input
                 type="text"
                 name="fabricante"
+                id="fabricante"
                 required
             >
         </div>
 
         <div class="form-group">
-            <label>Preço</label>
+            <label for="preco">Preço</label>
 
             <input
                 type="number"
                 step="0.01"
                 name="preco"
+                id="preco"
                 required
             >
         </div>
 
         <div class="form-group">
-            <label>Estoque</label>
+            <label for="estoque">Estoque</label>
 
             <input
                 type="number"
                 name="estoque"
+                id="estoque"
                 required
             >
         </div>
