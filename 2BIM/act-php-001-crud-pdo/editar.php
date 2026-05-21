@@ -1,4 +1,46 @@
-<?php include 'includes/header.php'; ?>
+<?php
+
+include 'config/conexao.php';
+
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+    header('Location: index.php');
+    exit;
+}
+
+$id = (int) $_GET['id'];
+
+$sql = "SELECT * FROM produtos WHERE id = :id";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+$stmt->execute();
+$produto = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$produto) {
+    header('Location: index.php');
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome = $_POST['nome'] ?? '';
+    $fabricante = $_POST['fabricante'] ?? '';
+    $preco = $_POST['preco'] ?? '';
+    $estoque = $_POST['estoque'] ?? '';
+
+    $sql = "UPDATE produtos SET nome = :nome, fabricante = :fabricante, preco = :preco, estoque = :estoque WHERE id = :id";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':fabricante', $fabricante);
+    $stmt->bindParam(':preco', $preco);
+    $stmt->bindParam(':estoque', $estoque);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    header('Location: index.php');
+    exit;
+}
+
+include 'includes/header.php';
+?>
 
 <div class="card">
 
@@ -13,7 +55,7 @@
             <input
                 type="text"
                 name="nome"
-                value=""
+                value="<?= htmlspecialchars($produto['nome'], ENT_QUOTES) ?>"
                 required
             >
 
@@ -26,7 +68,7 @@
             <input
                 type="text"
                 name="fabricante"
-                value=""
+                value="<?= htmlspecialchars($produto['fabricante'], ENT_QUOTES) ?>"
                 required
             >
 
@@ -40,7 +82,7 @@
                 type="number"
                 step="0.01"
                 name="preco"
-                value=""
+                value="<?= htmlspecialchars($produto['preco'], ENT_QUOTES) ?>"
                 required
             >
 
@@ -53,7 +95,7 @@
             <input
                 type="number"
                 name="estoque"
-                value=""
+                value="<?= htmlspecialchars($produto['estoque'], ENT_QUOTES) ?>"
                 required
             >
 
