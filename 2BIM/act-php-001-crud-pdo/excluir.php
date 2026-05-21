@@ -1,4 +1,25 @@
-<?php include 'includes/header.php'; ?>
+<?php
+include 'config/conexao.php';
+
+$id = filter_input(INPUT_GET, 'id');
+
+if (!$id) {
+    header('Location: index.php');
+    exit;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $sql = 'DELETE FROM produtos WHERE id = :id';
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    header('Location: index.php');
+    exit;
+}
+
+include 'includes/header.php';
+?>
 
 <div class="card">
 
@@ -12,7 +33,7 @@
 
     <div class="card-buttons">
 
-        <form action="" method="POST">
+        <form action="?id=<?= $id ?>" method="POST">
 
             <button class="btn btn-red">
                 Confirmar Exclusão
