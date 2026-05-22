@@ -38,12 +38,12 @@ include 'includes/header.php';
             <button class="btn btn-red">
                 Confirmar Exclusão
             </button>
-
-        </form>
-
         <a href="index.php" class="btn btn-blue">
             Cancelar
         </a>
+
+        </form>
+
 
     </div>
 
