@@ -1,5 +1,6 @@
-<?php include 'includes/header.php';
-      include 'config/conexao.php';
+<?php 
+include 'includes/header.php';
+include 'config/conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -21,8 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bindParam(':estoque', $estoque);
 
     $stmt->execute();
+
+    echo "<script>
+            alert('Produto cadastrado!');
+            window.location.href='index.php';
+          </script>";
 }
-    
 ?>
 
 <div class="card">
@@ -34,45 +39,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="form-group">
             <label>Nome</label>
 
-            <input
-                type="text"
-                name="nome"
-                required
-            >
+            <input type="text" name="nome" required>
         </div>
 
         <div class="form-group">
             <label>Fabricante</label>
 
-            <input
-                type="text"
-                name="fabricante"
-                required
-            >
+            <input type="text" name="fabricante" required>
         </div>
 
         <div class="form-group">
             <label>Preço</label>
 
-            <input
-                type="number"
-                step="0.01"
-                name="preco"
-                required
-            >
+            <input type="number" step="0.01" name="preco" required>
         </div>
 
         <div class="form-group">
             <label>Estoque</label>
 
-            <input
-                type="number"
-                name="estoque"
-                required
-            >
+            <input type="number" name="estoque" required>
         </div>
 
-        <button class="btn btn-green">
+        <button type="submit" class="btn btn-green">
             Salvar Produto
         </button>
 
