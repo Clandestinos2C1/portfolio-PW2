@@ -1,5 +1,6 @@
 <?php
 
+// Retrieve albums and their categories
 $sql = "SELECT discos.*, categorias.nome AS categoria
 FROM discos
 INNER JOIN categorias
@@ -9,6 +10,7 @@ $stmt = $pdo->prepare($sql);
 
 $stmt->execute();
 
+// Store all records in an array
 $discos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -25,29 +27,13 @@ $discos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                     <div class="disco-info">
 
-                        <span class="disco-genre">
+                        <span class="disco-genre"><?= $disco['categoria'] ?></span>
 
-                            <?= $disco['categoria'] ?>
+                        <h3><?= $disco['titulo'] ?></h3>
 
-                        </span>
+                        <p><?= $disco['artista'] ?></p>
 
-                        <h3>
-
-                            <?= $disco['titulo'] ?>
-
-                        </h3>
-
-                        <p>
-
-                            <?= $disco['artista'] ?>
-
-                        </p>
-
-                        <span>
-
-                            R$ <?= $disco['preco'] ?>
-
-                        </span>
+                        <span>R$ <?= $disco['preco'] ?></span>
 
                     </div>
 

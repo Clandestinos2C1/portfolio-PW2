@@ -2,11 +2,13 @@
 
 require("conexao.php");
 
-$titulo = "Midnight Echoes";
-$artista = "Skyline Dreams";
-$preco = 99.90;
-$categoria = 2;
+// Sample album data
+$albumTitle = "Midnight Echoes";
+$artistName = "Skyline Dreams";
+$albumPrice = 99.90;
+$categoryId = 2;
 
+// Insert a new album into the database
 $sql = "INSERT INTO discos
 (titulo, artista, preco, categoria_id)
 
@@ -17,10 +19,10 @@ $stmt = $pdo->prepare($sql);
 
 $stmt->execute([
 
-    ':titulo' => $titulo,
-    ':artista' => $artista,
-    ':preco' => $preco,
-    ':categoria' => $categoria
+    ':titulo' => $albumTitle,
+    ':artista' => $artistName,
+    ':preco' => $albumPrice,
+    ':categoria' => $categoryId
 
 ]);
 
