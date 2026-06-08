@@ -20,6 +20,19 @@ CREATE TABLE discos (
     REFERENCES categorias(id_categoria)
 );
 
+CREATE TABLE usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    tipo ENUM('admin', 'cliente') NOT NULL DEFAULT 'cliente',
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO usuarios (nome, email, senha, tipo) VALUES
+('Administrador', 'admin@tmaqd.com', '$2b$12$YYWltjSe3zJBU4VEa6xAAui/4lJPGNhqfBW7XjjXpiHCmycANuZuy', 'admin'),
+('Cliente Demo', 'cliente@tmaqd.com', '$2b$12$dHwmeANOKXCb3BUUGWmGu.1dqx0PC4PfismrUkiGe6ZzjSPB1TBMK', 'cliente');
+
 CREATE TABLE newsletter (
     id_email INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(150) NOT NULL UNIQUE,
