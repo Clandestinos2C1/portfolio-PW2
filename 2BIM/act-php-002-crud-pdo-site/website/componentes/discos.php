@@ -25,6 +25,12 @@ $discos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 <div class="disco-card">
 
+                    <?php if (!empty($disco['imagem'])): ?>
+                        <div class="disco-cover">
+                            <img src="<?= htmlspecialchars($disco['imagem']) ?>" alt="Capa de <?= htmlspecialchars($disco['titulo']) ?>" />
+                        </div>
+                    <?php endif; ?>
+
                     <div class="disco-info">
 
                         <span class="disco-genre"><?= $disco['categoria'] ?></span>
