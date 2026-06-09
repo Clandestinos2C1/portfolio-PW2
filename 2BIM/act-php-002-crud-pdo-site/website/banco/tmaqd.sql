@@ -51,10 +51,6 @@ INSERT INTO discos
 (titulo, artista, preco, categoria_id, descricao, destaque, estoque, imagem)
 VALUES
 
-INSERT INTO discos
-(titulo, artista, preco, categoria_id, descricao, destaque, estoque, imagem)
-VALUES
-
 -- ROCK (1)
 (
 'The Dark Side of the Moon',
