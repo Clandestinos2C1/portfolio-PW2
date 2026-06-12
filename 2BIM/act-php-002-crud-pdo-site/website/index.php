@@ -39,6 +39,6 @@ require_once 'conexao.php';
   <!-- FOOTER -->
     <?php include("componentes/footer.php"); ?>
 
-  <script src="script.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

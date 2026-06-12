@@ -51,6 +51,7 @@ INSERT INTO discos
 (titulo, artista, preco, categoria_id, descricao, destaque, estoque, imagem)
 VALUES
 
+
 -- ROCK (1)
 (
 'The Dark Side of the Moon',
@@ -60,7 +61,7 @@ VALUES
 'Um dos álbuns mais influentes da história do rock.',
 1,
 15,
-'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f'
+'https://upload.wikimedia.org/wikipedia/pt/thumb/3/3b/Dark_Side_of_the_Moon.png/250px-Dark_Side_of_the_Moon.png'
 ),
 
 (
@@ -71,7 +72,7 @@ VALUES
 'Clássico absoluto do hard rock.',
 0,
 10,
-'https://images.unsplash.com/photo-1511379938547-c1f69419868d'
+'https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/ACDC_Back_in_Black.png/250px-ACDC_Back_in_Black.png'
 ),
 
 -- POP (2)
@@ -83,7 +84,7 @@ VALUES
 'Álbum de estreia que conquistou milhões de fãs.',
 1,
 20,
-'https://images.unsplash.com/photo-1516280440614-37939bbacd81'
+'https://upload.wikimedia.org/wikipedia/pt/7/71/Sour_-_Olivia_Rodrigo.png'
 ),
 
 (
@@ -94,7 +95,7 @@ VALUES
 'Sucesso mundial com hits e letras marcantes.',
 1,
 18,
-'https://images.unsplash.com/photo-1501612780327-45045538702b'
+'https://upload.wikimedia.org/wikipedia/pt/0/03/Olivia_Rodrigo_-_Guts.png'
 ),
 
 -- MPB (3)
@@ -106,7 +107,7 @@ VALUES
 'Uma das maiores obras da música brasileira.',
 1,
 12,
-'https://images.unsplash.com/photo-1487180144351-b8472da7d491'
+'https://upload.wikimedia.org/wikipedia/pt/c/cb/Milton_Nascimento_-_Clube_da_Esquina.jpg'
 ),
 
 (
@@ -117,7 +118,7 @@ VALUES
 'Álbum histórico da MPB.',
 0,
 8,
-'https://images.unsplash.com/photo-1510915361894-db8b60106cb1'
+'https://upload.wikimedia.org/wikipedia/pt/7/75/Constru%C3%A7%C3%A3o_chico_buarque.jpg'
 ),
 
 -- INDIE (4)
@@ -129,7 +130,7 @@ VALUES
 'Referência moderna do indie rock.',
 1,
 16,
-'https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae'
+'https://upload.wikimedia.org/wikipedia/pt/9/96/Capa-AM_%28oficial%29.jpeg'
 ),
 
 (
@@ -140,7 +141,7 @@ VALUES
 'Psicodelia moderna com produção impecável.',
 1,
 11,
-'https://images.unsplash.com/photo-1507838153414-b4b713384a76'
+'https://upload.wikimedia.org/wikipedia/pt/2/2d/Currents_Tame_Impala.png'
 ),
 
 -- CLÁSSICOS (5)
@@ -152,7 +153,7 @@ VALUES
 'Uma das composições mais famosas da música clássica.',
 0,
 9,
-'https://images.unsplash.com/photo-1465847899084-d164df4dedc6'
+'https://upload.wikimedia.org/wikipedia/commons/1/1b/Antonio_Vivaldi.jpg'
 ),
 
 (
@@ -163,7 +164,7 @@ VALUES
 'Obra-prima da música erudita.',
 1,
 7,
-'https://images.unsplash.com/photo-1507838153414-b4b713384a76'
+'https://upload.wikimedia.org/wikipedia/commons/6/6f/Beethoven.jpg'
 ),
 
 -- K-POP (6)
@@ -175,7 +176,7 @@ VALUES
 'Um dos álbuns mais vendidos do grupo.',
 1,
 25,
-'https://images.unsplash.com/photo-1501386761578-eac5c94b800a'
+'https://upload.wikimedia.org/wikipedia/pt/2/21/BTS_-_Map_of_the_Soul_7.png'
 ),
 
 (
@@ -186,5 +187,5 @@ VALUES
 'Grande sucesso do quarteto sul-coreano.',
 1,
 22,
-'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f'
+'https://upload.wikimedia.org/wikipedia/pt/a/a1/Blackpink_-_Born_Pink.png'
 );
