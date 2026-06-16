@@ -1,3 +1,24 @@
+<?php
+$hero_discs = 0;
+$hero_artists = 0;
+$hero_genres = 0;
+
+if (isset($pdo)) {
+    try {
+        $stmt = $pdo->query('SELECT COUNT(*) FROM discos');
+        $hero_discs = (int) $stmt->fetchColumn();
+
+        $stmt = $pdo->query('SELECT COUNT(DISTINCT artista) FROM discos');
+        $hero_artists = (int) $stmt->fetchColumn();
+
+        $stmt = $pdo->query('SELECT COUNT(DISTINCT categoria_id) FROM discos');
+        $hero_genres = (int) $stmt->fetchColumn();
+    } catch (PDOException $e) {
+        // mantém valores padrões se houver erro na query.
+    }
+}
+?>
+
 <section class="hero" id="hero">
     <div class="hero-noise"></div>
     <div class="hero-vinyl vinyl-bg-1"></div>
@@ -15,11 +36,11 @@
         <a href="#sobre" class="btn btn-ghost">Nossa História</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><span class="stat-num">2.400+</span><span class="stat-label">Discos</span></div>
+        <div class="stat"><span class="stat-num"><?= $hero_discs ?></span><span class="stat-label">Discos</span></div>
         <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">180+</span><span class="stat-label">Artistas</span></div>
+        <div class="stat"><span class="stat-num"><?= $hero_artists ?></span><span class="stat-label">Artistas</span></div>
         <div class="stat-divider"></div>
-        <div class="stat"><span class="stat-num">12</span><span class="stat-label">Gêneros</span></div>
+        <div class="stat"><span class="stat-num"><?= $hero_genres ?></span><span class="stat-label">Gêneros</span></div>
       </div>
     </div>
   </section>
