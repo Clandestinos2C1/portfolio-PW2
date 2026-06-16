@@ -473,29 +473,83 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   color: white;
   border-color: var(--purple);
 }
-.ver-mais-wrap { text-align: center; }
-
-/* ===== CATEGORIAS ===== */
-.categorias-section {
-  background: linear-gradient(180deg, var(--bg) 0%, var(--lilac-soft) 100%);
-}
-.categorias-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-.cat-card {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 1.4rem 1rem;
-  text-align: center;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-  cursor: pointer;
-  border: 1.5px solid transparent;
-  position: relative;
-  overflow: hidden;
-}
+    .purchase-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      margin-top: 2rem;
+      max-width: 680px;
+      width: 100%;
+    }
+    .purchase-card h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .purchase-note {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 1.4rem;
+    }
+    .purchase-form {
+      display: grid;
+      gap: 1rem;
+    }
+    .input-group {
+      display: grid;
+      gap: 0.45rem;
+    }
+    .input-group label {
+      color: var(--text-light);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .input-group input,
+    .input-group textarea {
+      width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 0.85rem;
+      padding: 0.95rem 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+    .input-group input:focus,
+    .input-group textarea:focus {
+      outline: none;
+      border-color: var(--purple);
+      box-shadow: 0 0 0 4px rgba(123, 44, 191, 0.08);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .purchase-message {
+      max-width: 680px;
+      padding: 1rem 1.2rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1.2rem;
+      font-weight: 600;
+    }
+    .purchase-message.success {
+      background: #e8f6ff;
+      color: #065a9a;
+      border: 1px solid #90c8ff;
+    }
+    .purchase-message.error {
+      background: #ffe8e8;
+      color: #9a1d1d;
+      border: 1px solid #ffb3b3;
+    }
+    .btn.btn-primary {
+      padding: 0.95rem 1.8rem;
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(123, 44, 191, 0.18);
+    }
 .cat-card::before {
   content: '';
   position: absolute;
