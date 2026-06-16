@@ -1,62 +1,85 @@
 <?php
-
 $sql = "SELECT discos.*, categorias.nome AS categoria
-FROM discos
-INNER JOIN categorias
-ON discos.categoria_id = categorias.id_categoria";
+        FROM discos
+        INNER JOIN categorias
+        ON discos.categoria_id = categorias.id_categoria";
 
-$stmt = $pdo->prepare($sql);
-
-$stmt->execute();
-
-$discos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+try {
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $discos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch(PDOException $e) {
+    $discos = [];
+    $erro_discos = "Erro ao buscar discos: " . $e->getMessage();
+}
 ?>
 
 <section class="section discos-section" id="discos">
-
     <div class="container">
 
-        <div class="discos-grid">
+        <?php if (isset($erro_discos)): ?>
+            <div style="color:red;padding:20px;background:#ffe0e0;border-radius:5px;">
+                <strong>Erro:</strong> <?= $erro_discos ?>
+            </div>
 
-            <?php foreach($discos as $disco): ?>
+        <?php elseif (empty($discos)): ?>
+            <div style="color:orange;padding:20px;background:#fff3e0;border-radius:5px;">
+                <strong>Aviso:</strong> Nenhum disco encontrado.
+            </div>
 
-                <div class="disco-card">
+        <?php else: ?>
 
-                    <div class="disco-info">
+            <div class="discos-grid">
 
-                        <span class="disco-genre">
+                <?php foreach($discos as $disco): ?>
 
-                            <?= $disco['categoria'] ?>
+                    <div class="disco-card">
 
-                        </span>
+                        <a href="disco.php?id=<?= $disco['id_disco'] ?>" class="disco-link">
 
-                        <h3>
+                            <div class="disco-img-wrap">
 
-                            <?= $disco['titulo'] ?>
+                                <?php if (!empty($disco['imagem'])): ?>
+                                    <div class="disco-cover">
+                                        <img
+                                            src="<?= htmlspecialchars($disco['imagem']) ?>"
+                                            alt="Capa de <?= htmlspecialchars($disco['titulo']) ?>">
+                                    </div>
+                                <?php endif; ?>
 
-                        </h3>
+                            </div>
 
-                        <p>
+                            <div class="disco-info">
 
-                            <?= $disco['artista'] ?>
+                                <span class="disco-genre">
+                                    <?= htmlspecialchars($disco['categoria']) ?>
+                                </span>
 
-                        </p>
+                                <h3 class="disco-album">
+                                    <?= htmlspecialchars($disco['titulo']) ?>
+                                </h3>
 
-                        <span>
+                                <p class="disco-artist">
+                                    <?= htmlspecialchars($disco['artista']) ?>
+                                </p>
 
-                            R$ <?= $disco['preco'] ?>
+                                <div class="disco-footer">
+                                    <span class="disco-price">
+                                        R$ <?= number_format($disco['preco'], 2, ',', '.') ?>
+                                    </span>
+                                </div>
 
-                        </span>
+                            </div>
+
+                        </a>
 
                     </div>
 
-                </div>
+                <?php endforeach; ?>
 
-            <?php endforeach; ?>
+            </div>
 
-        </div>
+        <?php endif; ?>
 
     </div>
-
 </section>
