@@ -500,6 +500,79 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
       color: var(--text-light);
       margin-bottom: 1.4rem;
     }
+    .page-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-end;
+      margin-bottom: 2rem;
+    }
+    .page-header h1 {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      margin: 0;
+    }
+    .page-header p {
+      color: var(--text-light);
+      margin: 0;
+      max-width: 620px;
+    }
+    .disco-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .disco-detail-image img {
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      object-fit: cover;
+    }
+    .disco-detail-info {
+      display: grid;
+      gap: 1rem;
+    }
+    .disco-price-detail,
+    .disco-stock {
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .disco-description {
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+    .form-page,
+    .section {
+      padding-bottom: 4rem;
+    }
+    .form-container,
+    .search-form {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2rem;
+      margin-top: 1.5rem;
+    }
+    .form-container h1,
+    .search-form h1 {
+      margin-bottom: 1rem;
+    }
+    .search-form {
+      display: grid;
+      gap: 1rem;
+    }
+    .search-form .input-group {
+      width: 100%;
+    }
+    .search-form button {
+      width: fit-content;
+    }
+    @media (min-width: 900px) {
+      .disco-detail-grid {
+        grid-template-columns: 420px 1fr;
+      }
+    }
     .purchase-form {
       display: grid;
       gap: 1rem;
