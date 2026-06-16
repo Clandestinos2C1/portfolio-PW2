@@ -2,21 +2,23 @@
 
 require("conexao.php");
 
-$id = 1;
+// Album to search for
+$recordId = 1;
 
 $sql = "SELECT * FROM discos WHERE id_disco = :id";
 
 $stmt = $pdo->prepare($sql);
 
-$stmt->execute([ ':id' => $id ]);
+$stmt->execute([ ':id' => $recordId ]);
 
-$disco = $stmt->fetch(PDO::FETCH_ASSOC);
+// Fetch the result as an associative array
+$album = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if($disco){
+if($album){
 
-    echo $disco['titulo'];
+    echo $album['titulo'];
     echo "<br>";
-    echo $disco['artista'];
+    echo $album['artista'];
 
 }else{
 

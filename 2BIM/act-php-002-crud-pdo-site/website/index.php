@@ -1,4 +1,7 @@
-<?php require_once'conexao.php'; ?>
+<?php
+session_start();
+require_once 'conexao.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -36,6 +39,6 @@
   <!-- FOOTER -->
     <?php include("componentes/footer.php"); ?>
 
-  <script src="script.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

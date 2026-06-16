@@ -17,5 +17,7 @@
         <a href="cadastro.php">Cadastrar</a>
     </nav>
 </header>
-
+    
+<main>
+    
 <div class="container">

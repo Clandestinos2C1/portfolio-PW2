@@ -1,15 +1,15 @@
 <?php
 $sql = "SELECT discos.*, categorias.nome AS categoria
-        FROM discos
-        INNER JOIN categorias
-        ON discos.categoria_id = categorias.id_categoria";
+FROM discos
+INNER JOIN categorias
+ON discos.categoria_id = categorias.id_categoria";
 
 try {
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
     $discos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch(PDOException $e) {
-    $discos = [];
+    $discos = array();
     $erro_discos = "Erro ao buscar discos: " . $e->getMessage();
 }
 ?>
@@ -83,3 +83,4 @@ try {
 
     </div>
 </section>
+
