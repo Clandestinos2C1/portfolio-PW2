@@ -96,7 +96,7 @@ try {
         </section>
       <?php endif; ?>
 
-      <p class="admin-footer">Voltar para <a href="../index.php">o site</a>.</p>
+      <p class="admin-footer"><a href="../index.php">Voltar para o site</a>.</p>
     </div>
   </main>
 </body>
