@@ -3,6 +3,9 @@ session_start();
 require_once __DIR__ . '/../conexao.php';
 
 $id = filter_input(INPUT_GET, 'id_disco', FILTER_VALIDATE_INT);
+if (!$id) {
+    $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+}
 
 if (!$id) {
     die("Disco não encontrado.");
