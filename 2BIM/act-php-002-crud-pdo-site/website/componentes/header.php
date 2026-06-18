@@ -1,6 +1,6 @@
 <header class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="#" class="logo">
+      <a href="../index.php" class="logo">
             <img src="imagens/logo.png" alt="Logo T+AMQD, Tenho mais amigos que discos">
       </a>
       <nav class="nav-links" id="navLinks">
