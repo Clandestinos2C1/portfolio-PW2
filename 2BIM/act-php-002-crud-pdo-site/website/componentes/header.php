@@ -8,7 +8,7 @@
         <a href="#categorias">Categorias</a>
         <a href="#sobre">Sobre</a>
         <a href="#experiencia">Experiência</a>
-        <a href="#contato" class="nav-cta">Contato</a>
+        <a href="#contato" >Contato</a>
         <?php if(isset($_SESSION['id_usuario'])): ?>
           <?php if($_SESSION['tipo'] === 'admin'): ?>
             <a href="admin/dashboard.php">Painel</a>
