@@ -93,7 +93,7 @@ if (!$id_disco && $_SERVER['REQUEST_METHOD'] !== 'POST') {
           <p class="admin-subtitle">Selecione um disco e altere seus dados diretamente.</p>
         </div>
         <div class="admin-actions">
-          <a href="dashboard.php" class="btn btn-ghost">Voltar ao painel</a>
+          <a href="dashboard.php" class="btn btn-secondary">Voltar ao painel</a>
         </div>
       </div>
 

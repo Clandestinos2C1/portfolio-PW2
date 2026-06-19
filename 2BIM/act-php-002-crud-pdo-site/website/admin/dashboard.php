@@ -44,7 +44,7 @@ try {
         <div class="admin-actions">
           <a href="criar.php" class="btn btn-primary">Novo Disco</a>
           <a href="editar.php" class="btn btn-outline">Editar Disco</a>
-          <a href="excluir.php" class="btn btn-ghost">Excluir Disco</a>
+          <a href="excluir.php" class="btn btn-outline">Excluir Disco</a>
           <a href="../logout.php" class="btn btn-secondary">Sair</a>
         </div>
       </header>
@@ -96,7 +96,7 @@ try {
         </section>
       <?php endif; ?>
 
-      <p class="admin-footer"><a href="../index.php">Voltar para o site</a>.</p>
+      <p class="admin-footer"><a href="../index.php" class="btn btn-secondary">Voltar para o site</a></p>
     </div>
   </main>
 </body>
