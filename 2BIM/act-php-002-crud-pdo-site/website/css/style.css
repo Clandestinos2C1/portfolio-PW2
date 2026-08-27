@@ -752,6 +752,12 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   transition: opacity var(--transition);
   border-radius: var(--radius);
 }
+.cat-card {
+  display: block;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+}
 .cat-card:hover::before { opacity: 1; }
 .cat-rock::before { background: linear-gradient(135deg, rgba(220,38,38,0.08), rgba(255,107,181,0.08)); }
 .cat-jazz::before { background: linear-gradient(135deg, rgba(180,83,9,0.08), rgba(253,186,116,0.08)); }

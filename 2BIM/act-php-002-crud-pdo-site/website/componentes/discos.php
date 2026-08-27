@@ -1,11 +1,21 @@
 <?php
+$categoriaId = filter_input(INPUT_GET, 'categoria', FILTER_VALIDATE_INT);
+$categoriaId = $categoriaId !== false && $categoriaId !== null && $categoriaId > 0 ? $categoriaId : null;
+
 $sql = "SELECT discos.*, categorias.nome AS categoria
 FROM discos
 INNER JOIN categorias
 ON discos.categoria_id = categorias.id_categoria";
 
+if ($categoriaId !== null) {
+    $sql .= " WHERE discos.categoria_id = :categoria_id";
+}
+
 try {
     $stmt = $pdo->prepare($sql);
+    if ($categoriaId !== null) {
+        $stmt->bindValue(':categoria_id', $categoriaId, PDO::PARAM_INT);
+    }
     $stmt->execute();
     $discos = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch(PDOException $e) {
