@@ -371,12 +371,12 @@ PEM;
     <?php imprimirBotaoVoltar(); ?>
 
     <ul>
-        <li><b>Hash (SHA-256/512):</b> verificar integridade de arquivos/dados que não precisam ser recuperados.</li>
-        <li><b>password_hash/verify:</b> sempre para armazenar senhas de usuários.</li>
+        <li><b>Hash (SHA-256/512):</b> verificar integridade de arquivos/dados que não precisam ser recuperados. Também é usado em criptomoedas, como o Bitcoin.</li>
+        <li><b>password_hash/verify:</b> sempre para armazenar senhas de usuários. Usa o Bcrypt ou Argon2id geralmente, evidenciados na pesquisa.</li>
         <li><b>HMAC:</b> verificar integridade + autenticidade quando ambas as partes compartilham uma chave secreta (ex: assinar tokens, webhooks).</li>
-        <li><b>AES (openssl_encrypt/decrypt):</b> criptografar dados que precisam ser recuperados depois (ex: dados sensíveis salvos em banco).</li>
+        <li><b>AES (openssl_encrypt/decrypt):</b> criptografar dados que precisam ser recuperados depois (ex: dados sensíveis como cpf, cartão de crédito).</li>
         <li><b>RSA:</b> troca de chaves, assinaturas digitais, cenários onde remetente e destinatário não compartilham uma chave secreta previamente.</li>
-        <li><b>Base64:</b> apenas para representar dados binários como texto (ex: enviar imagens em JSON), nunca para esconder informação.</li>
+        <li><b>Base64:</b> apenas para representar dados binários como texto (ex: enviar imagens, pdfs, arquivos no geral em JSON), nunca para esconder informação.</li>
     </ul>
 
 <?php else: ?>
