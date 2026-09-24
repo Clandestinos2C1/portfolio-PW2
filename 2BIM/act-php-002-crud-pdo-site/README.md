@@ -6,11 +6,11 @@
 --- 
 ### DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL
 
-| Ferramenta               | Etapa           | Finalidade                                        | Validação                              |
-| ------------------------ | --------------- | ----------------------------------------------    | -------------------------------------- |
-| ChatGPT                  | Produto         | Geração de imagens, como logo e fachada.          | Imagem analisada e escolhida a dedo.   |
-| GitHub Copilot           | Desenvolvimento | Sugestões e autocompletar código.                 | Código revisado e testado pelo grupo.  |
-| Claude                   | Desenvolvimento | CSS bonito e complexo, para parecer profissional. | Código revisado e testado pelo grupo.  |
+| Ferramenta               | Etapa           | Finalidade                                                                                | Validação                              |
+| ------------------------ | --------------- | ----------------------------------------------                                            | -------------------------------------- |
+| ChatGPT                  | Produto         | Geração de imagens, como logo e fachada.                                                  | Imagem analisada e escolhida a dedo.   |
+| GitHub Copilot           | Desenvolvimento | Sugestões e autocompletar código.                                                         | Código revisado e testado pelo grupo.  |
+| Claude                   | Desenvolvimento | CSS bonito e complexo, para parecer profissional. JS para navbar e trigger de  animações. | Código revisado e testado pelo grupo.  |
 
 
 ---
