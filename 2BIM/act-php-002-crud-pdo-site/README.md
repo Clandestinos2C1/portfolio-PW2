@@ -1,8 +1,17 @@
 # 🎵 Projeto Site de Música
 
 ## 📌 Tema do Site
+### Música
 
-Música
+--- 
+### DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL
+
+| Ferramenta               | Etapa           | Finalidade                                        | Validação                              |
+| ------------------------ | --------------- | ----------------------------------------------    | -------------------------------------- |
+| ChatGPT                  | Produto         | Geração de imagens, como logo e fachada.          | Imagem analisada e escolhida a dedo.   |
+| GitHub Copilot           | Desenvolvimento | Sugestões e autocompletar código.                 | Código revisado e testado pelo grupo.  |
+| Claude                   | Desenvolvimento | CSS bonito e complexo, para parecer profissional. | Código revisado e testado pelo grupo.  |
+
 
 ---
 
