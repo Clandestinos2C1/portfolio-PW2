@@ -14,7 +14,6 @@
         <p class="footer-tagline">Porque música em vinil não é nostalgia. É resistência.</p>
         <div class="footer-socials">
           <a href="#" class="social-link" aria-label="Instagram">IG</a>
-          <a href="#" class="social-link" aria-label="Spotify">SP</a>
           <a href="#" class="social-link" aria-label="YouTube">YT</a>
           <a href="#" class="social-link" aria-label="TikTok">TK</a>
         </div>
@@ -65,7 +64,7 @@
     </div>
     <div class="footer-bottom">
       <div class="container">
-        <p>© 2024 Tenho Mais Amigos Que Discos. Feito com amor e muito vinil.</p>
+        <p>© 2026 Tenho Mais Amigos Que Discos. Feito com amor e muito vinil.</p>
         <p class="footer-fine">Todos os direitos reservados ao lado A e ao lado B.</p>
       </div>
     </div>
