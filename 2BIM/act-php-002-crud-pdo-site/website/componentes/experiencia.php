@@ -11,8 +11,10 @@
           <div class="exp-card-bg exp-bg-1"></div>
           <div class="exp-card-content">
             <div class="exp-icon">♫</div>
-            <blockquote class="exp-quote">"Existe um silêncio especial antes da agulha pousar no sulco. É o mundo segurando o fôlego."</blockquote>
-            <p class="exp-author">— um colecionador anônimo</p>
+            <blockquote class="exp-quote">"Eu lembro de quando peguei um vinil pela primeira vez e vi a arte incrível que ele tinha.
+              Não há nada igual. Você ouve aquele som granuloso do vinil, que faz um disco de rock realmente soar bem, 
+              som que os CDs nunca conseguirão reproduzir."</blockquote>
+            <p class="exp-author">— Nikki sixx, baixista do Mötley Crüe.</p>
           </div>
         </div>
 
