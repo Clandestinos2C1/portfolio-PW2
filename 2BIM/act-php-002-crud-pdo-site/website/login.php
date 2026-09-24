@@ -43,30 +43,39 @@ if (isset($_POST['entrar'])) {
   <title>Login | Tenho Mais Amigos Que Discos</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="auth-body">
   <main class="login-page">
+    <div class="login-glow login-glow-one"></div>
+    <div class="login-glow login-glow-two"></div>
+
     <section class="login-container">
-      <h1>Entrar</h1>
+      <div class="login-brand">
+        <span class="login-badge">Área administrativa</span>
+        <h1>Entrar</h1>
+      </div>
+
+      <p class="login-subtitle">Acesse o painel para gerenciar discos, categorias e pedidos.</p>
+
       <?php if ($error): ?>
         <div class="alert alert-error"><?= htmlspecialchars($error) ?></div>
       <?php endif; ?>
 
-      <form method="POST" action="login.php">
-        <label>
-          Email
-          <input type="email" name="email" placeholder="Seu email" required />
-        </label>
+      <form method="POST" action="login.php" class="login-form">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Seu email" autocomplete="email" required />
+        </div>
 
-        <label>
-          Senha
-          <input type="password" name="senha" placeholder="Sua senha" required />
-        </label>
+        <div class="input-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" placeholder="Sua senha" autocomplete="current-password" required />
+        </div>
 
-        <button type="submit" name="entrar">Entrar</button>
+        <button type="submit" name="entrar" class="btn btn-primary btn-block">Entrar</button>
       </form>
 
-      <p>
-        Voltar para <a href="index.php">o site</a>.
+      <p class="login-back">
+        <a href="index.php">Voltar para o site</a>
       </p>
     </section>
   </main>
