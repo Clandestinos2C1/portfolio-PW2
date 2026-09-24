@@ -50,11 +50,11 @@ if (isset($_POST['entrar'])) {
 
     <section class="login-container">
       <div class="login-brand">
-        <span class="login-badge">Área administrativa</span>
+        <span class="login-badge">Acesso à sua conta</span>
         <h1>Entrar</h1>
       </div>
 
-      <p class="login-subtitle">Acesse o painel para gerenciar discos, categorias e pedidos.</p>
+      <p class="login-subtitle">Entre para acompanhar sua experiência na Tenho Mais Amigos Que Discos.</p>
 
       <?php if ($error): ?>
         <div class="alert alert-error"><?= htmlspecialchars($error) ?></div>
