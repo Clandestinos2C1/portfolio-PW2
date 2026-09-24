@@ -21,7 +21,8 @@
           <div class="exp-card-content">
             <div class="exp-icon">◯</div>
             <h3>O Ritual</h3>
-            <p>Tirar o disco da capa. Sentir o peso. Limpar suavemente. Pousar a agulha. Esperar. Esse é o protocolo de quem sabe ouvir.</p>
+            <p>Pegar o vinil da estante. Admirar a capa. Relembrar a tracklist no verso. Tirar o disco delicadamente o disco da capa,
+               como um pai segurando seu filho. Colocar na vitrola. Baixar a agulha. Um ritual indispensável para um bom audiófilo.</p>
           </div>
         </div>
 
@@ -30,7 +31,9 @@
           <div class="exp-card-content">
             <div class="exp-icon">◎</div>
             <h3>A Imperfeição</h3>
-            <p>O crepitar do vinil não é defeito. É a assinatura do tempo. É a prova de que aquela música já foi amada antes de você.</p>
+            <p>O desgaste dos sulcos, os arranhões, as marcas de desgaste não são defeitos, são a personalidade do vinil,
+              é a prova de que ele foi amaddo, ouvido incontáveis vezes, e que ainda assim, continua tocando.
+            </p>
           </div>
         </div>
 
@@ -38,10 +41,11 @@
           <div class="exp-card-bg exp-bg-4"></div>
           <div class="exp-card-content horizontal">
             <div>
-              <div class="exp-icon">∿</div>
-              <h3>Ondas que Ficam</h3>
+              <div class="exp-icon">★</div>
+              <h3>Eterno </h3>
             </div>
-            <p>Streaming é água que escorre. Vinil é a água que você guarda numa garrafa e abre quando quer sentir aquele dia de novo.</p>
+            <p>Streaming morre quando o site cai, o vinil sempre te espera, com aquele cheiro de guardado que
+               só quem ainda opta pelo físico reconhece.</p>
           </div>
         </div>
 
