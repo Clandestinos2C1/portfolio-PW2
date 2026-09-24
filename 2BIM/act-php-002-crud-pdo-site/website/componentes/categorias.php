@@ -43,11 +43,18 @@ function getCategoryId(string $name, array $ids): int
         <h2 class="section-title">Categorias</h2>
       </div>
       <div class="categorias-grid">
+          
+       <a href="index.php#discos" class="cat-card cat-todos">
+         <div class="cat-icon">💿</div>
+         <h3>Todos</h3>
+         <p>Veja todos os discos da coleção</p>
+         <span class="cat-count"><?= array_sum($catCounts) ?> discos</span>
+        </a>
 
         <a href="index.php?categoria=<?= getCategoryId('Rock', $catIds) ?>#discos" class="cat-card cat-rock">
           <div class="cat-icon">🎸</div>
           <h3>Rock</h3>
-          <p>Clássicos e novos riffs que marcam épocas</p>
+          <p>Para os headbangers de plantão</p>
           <span class="cat-count"><?= getCategoryCount('Rock', $catCounts) ?> discos</span>
         </a>
 
@@ -61,14 +68,14 @@ function getCategoryId(string $name, array $ids): int
         <a href="index.php?categoria=<?= getCategoryId('MPB', $catIds) ?>#discos" class="cat-card cat-mpb">
           <div class="cat-icon">🌿</div>
           <h3>MPB</h3>
-          <p>A alma brasileira em cada compasso</p>
+          <p>Somente os que carregam nossa cultura no sangue</p>
           <span class="cat-count"><?= getCategoryCount('MPB', $catCounts) ?> discos</span>
         </a>
 
         <a href="index.php?categoria=<?= getCategoryId('Indie', $catIds) ?>#discos" class="cat-card cat-indie">
           <div class="cat-icon">✦</div>
           <h3>Indie</h3>
-          <p>Sons independentes que viram movimento</p>
+          <p>Sons independentes (e bem fresquinhos)</p>
           <span class="cat-count"><?= getCategoryCount('Indie', $catCounts) ?> discos</span>
         </a>
 
