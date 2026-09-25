@@ -122,7 +122,7 @@ try {
                     <?php if (!isset($disco['estoque']) || (int)$disco['estoque'] > 0): ?>
                         <section class="purchase-card">
                             <h2>Comprar este disco</h2>
-                            <p class="purchase-note">Este é um exemplo de compra escolar. Não é um pagamento real.</p>
+                            <p class="purchase-note">Esse é um exemplo de compra, não é como se você estivesse comprando de verdade.</p>
 
                             <form method="post" action="disco.php?id=<?= $id ?>" class="purchase-form">
 
